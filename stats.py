@@ -13,3 +13,13 @@ def count_characters(book_string):
             else:
                 characters_count[character.lower()] = 1
     return characters_count
+
+def order_characters(characters_count):
+    def sort_on(items):
+        return items["num"]
+    ordered_count = []
+    for character in characters_count:
+        ordered_count.append({"char": character, "num":characters_count[character]})
+    ordered_count.sort(reverse=True, key=sort_on)
+    return ordered_count
+
